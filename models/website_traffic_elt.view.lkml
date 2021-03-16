@@ -17,16 +17,22 @@ view: website_traffic_elt {
     sql: ${TABLE}."DATE" ;;
   }
 
-  dimension: traffic {
+  dimension: paid_traffic {
     type: number
-    sql: ${TABLE}."TRAFFIC" ;;
+    sql: ${TABLE}."PAID_TRAFFIC" ;;
   }
-
+  dimension: organic_traffic {
+    type: number
+    sql: ${TABLE}."ORGANIC_TRAFFIC" ;;
+  }
+  dimension: traffic_type1 {
+    type: string
+    sql: ${TABLE}."TRAFFIC_TYPE1" ;;
+  }
   dimension: traffic_type {
     type: string
-    sql: ${TABLE}."TRAFFIC_TYPE" ;;
+    sql: ${TABLE}."TRAFFIC_TYPE1" ;;
   }
-
   measure: count {
     type: count
     drill_fields: []
