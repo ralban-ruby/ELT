@@ -37,4 +37,12 @@ view: website_traffic_elt {
     type: count
     drill_fields: []
   }
+  measure: org_traffic {
+    type: number
+    sql: ${organic_traffic} / 1;;
+  }
+  measure: p_traffic {
+    type: number
+    sql: ${paid_traffic} / 1;;
+  }
 }
