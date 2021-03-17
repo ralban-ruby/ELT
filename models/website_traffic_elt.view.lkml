@@ -33,16 +33,12 @@ view: website_traffic_elt {
     type: string
     sql: ${TABLE}."TRAFFIC_TYPE1" ;;
   }
+  dimension: total_traffic {
+    type: number
+    sql: ${TABLE}."TOTAL_TRAFFIC" ;;
+  }
   measure: count {
     type: count
     drill_fields: []
-  }
-  measure: org_traffic {
-    type: number
-    sql: ${organic_traffic} / 1;;
-  }
-  measure: p_traffic {
-    type: number
-    sql: ${paid_traffic} / 1;;
   }
 }
