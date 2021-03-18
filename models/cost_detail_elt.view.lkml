@@ -2,7 +2,12 @@ view: cost_detail_elt {
   sql_table_name: "MARKETING"."COST_DETAIL_ELT"
     ;;
 
-  dimension_group: monthly_spend {
+  dimension: cpmql {
+    type: number
+    sql: ${TABLE}."CPMQL" ;;
+  }
+
+  dimension_group: date {
     type: time
     timeframes: [
       raw,
@@ -14,12 +19,12 @@ view: cost_detail_elt {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}."MONTHLY_SPEND" ;;
+    sql: ${TABLE}."DATE" ;;
   }
 
-  dimension: total {
+  dimension: mcac {
     type: number
-    sql: ${TABLE}."TOTAL" ;;
+    sql: ${TABLE}."MCAC" ;;
   }
 
   measure: count {
