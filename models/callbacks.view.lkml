@@ -46,4 +46,9 @@ view: callbacks {
     type: count
     drill_fields: [name]
   }
+
+  measure: Callback_Ratio {
+    type: sum
+    sql: ${TABLE}."ROUNDEDRATIO"/100;;
+  }
 }
