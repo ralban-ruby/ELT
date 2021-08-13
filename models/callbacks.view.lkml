@@ -49,6 +49,7 @@ view: callbacks {
 
   measure: Callback_Ratio {
     type: sum
-    sql: ${TABLE}."ROUNDEDRATIO"/100;;
+    sql: ${TABLE}."ROUNDEDRATIO";;
+    value_format: "0\%"
   }
 }
