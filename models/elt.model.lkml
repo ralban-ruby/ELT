@@ -9,6 +9,7 @@ explore: total_traffic_elt {hidden: yes}
 explore: website_traffic_elt {hidden: yes}
 explore: close_rate_elt {hidden: yes}
 explore: callbacks {}
+explore: jace_report {}
 
 datagroup: elt_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
