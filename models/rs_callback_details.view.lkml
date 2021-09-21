@@ -16,10 +16,13 @@ view: rs_callback_details {
 
   dimension_group: fc_callstarttime {
     type: time
+    label: "Call Start"
     timeframes: [
       raw,
       time,
       date,
+      hour_of_day,
+      time_of_day,
       week,
       month,
       quarter,
@@ -54,6 +57,7 @@ view: rs_callback_details {
 
   dimension_group: sc_callstarttime {
     type: time
+    label: "Call Back"
     timeframes: [
       raw,
       time,
@@ -61,7 +65,9 @@ view: rs_callback_details {
       week,
       month,
       quarter,
-      year
+      year,
+      hour_of_day,
+      time_of_day
     ]
     sql: CAST(${TABLE}."SC_CALLSTARTTIME" AS TIMESTAMP_NTZ) ;;
   }
