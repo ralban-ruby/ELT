@@ -4,11 +4,13 @@ view: rs_callback_details {
 
   dimension: fc_attendanttime {
     type: string
+    label: "Seconds"
     sql: ${TABLE}."FC_ATTENDANTTIME" ;;
   }
 
   dimension: fc_callerid {
     type: string
+    label: "CallerID"
     sql: ${TABLE}."FC_CALLERID" ;;
   }
 
@@ -28,21 +30,25 @@ view: rs_callback_details {
 
   dimension: fc_did {
     type: string
+    label: "DID"
     sql: ${TABLE}."FC_DID" ;;
   }
 
   dimension: fc_receptionist {
     type: string
+    label: "Receptionist"
     sql: ${TABLE}."FC_RECEPTIONIST" ;;
   }
 
   dimension: fc_wrapup {
     type: string
+    label: "Wrap Up"
     sql: ${TABLE}."FC_WRAPUP" ;;
   }
 
   dimension: sc_attendanttime {
     type: string
+    label: "Seconds"
     sql: ${TABLE}."SC_ATTENDANTTIME" ;;
   }
 
@@ -62,11 +68,13 @@ view: rs_callback_details {
 
   dimension: sc_receptionist {
     type: string
+    label: "Receptionist"
     sql: ${TABLE}."SC_RECEPTIONIST" ;;
   }
 
   dimension: sc_wrapup {
     type: string
+    label: "Wrap Up"
     sql: ${TABLE}."SC_WRAPUP" ;;
   }
 
