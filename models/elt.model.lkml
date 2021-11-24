@@ -9,7 +9,6 @@ explore: total_traffic_elt {hidden: yes}
 explore: website_traffic_elt {hidden: yes}
 explore: close_rate_elt {hidden: yes}
 explore: callbacks {}
-explore: jace_report {}
 explore: recap_callbacks {}
 explore: rs_callback_details{hidden: yes}
 
