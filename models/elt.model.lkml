@@ -10,7 +10,6 @@ explore: website_traffic_elt {hidden: yes}
 explore: close_rate_elt {hidden: yes}
 explore: callbacks {}
 explore: jace_data {}
-explore: recap_callbacks {}
 explore: moonlight_data{}
 explore: rs_callback_details{hidden: yes}
 

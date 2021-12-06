@@ -1,4 +1,4 @@
-view: recap_callbacks {
+view: rs_recap_callback {
   sql_table_name: "RS"."CALLBACK_RECAP"
     ;;
 
