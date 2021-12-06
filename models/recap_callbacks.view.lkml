@@ -1,5 +1,5 @@
 view: recap_callbacks {
-  sql_table_name: "RS"."RECAP_CALLBACKS"
+  sql_table_name: "RS"."CALLBACK_RECAP"
     ;;
 
   dimension: fc_attendanttime {
