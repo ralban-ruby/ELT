@@ -18,6 +18,7 @@ view: callbacks {
       raw,
       date,
       week,
+      week_of_year,
       month,
       quarter,
       year
@@ -25,6 +26,12 @@ view: callbacks {
     convert_tz: no
     datatype: date
     sql: ${TABLE}."DATE" ;;
+  }
+
+  dimension: Week {
+    type: date
+    sql: DATEADD( day, 7, ${date_week});;
+    datatype: date
   }
 
   dimension: name {
