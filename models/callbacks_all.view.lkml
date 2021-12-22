@@ -13,6 +13,11 @@ view: callbacks_all {
     sql: ${TABLE}."CALLS" ;;
   }
 
+  dimension: callbackratio {
+    type: number
+    sql: ${TABLE}."CALLbackratio" ;;
+  }
+
   dimension_group: date {
     type: time
     timeframes: [
@@ -39,11 +44,6 @@ view: callbacks_all {
     sql: ${TABLE}."NAME" ;;
   }
 
-dimension: Callback_ratio {
-  type: number
-  sql: ${TABLE}."CallBackRatio";;
-
-}
 
   measure: count {
     type: count
