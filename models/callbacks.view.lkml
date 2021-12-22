@@ -30,7 +30,7 @@ view: callbacks {
 
   dimension: Week {
     type: date
-    sql: DATEADD( day, 7, ${date_week});;
+    sql: DATEADD( day,7, ${date_week});;
     datatype: date
   }
 
