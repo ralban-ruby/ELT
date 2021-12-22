@@ -15,7 +15,7 @@ view: callbacks_all {
 
   dimension: callbackratio {
     type: number
-    sql: ${TABLE}."CALLbackratio" ;;
+    sql: ${TABLE}."Callbackratio" ;;
   }
 
   dimension_group: date {
