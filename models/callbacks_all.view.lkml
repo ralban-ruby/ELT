@@ -39,6 +39,12 @@ view: callbacks_all {
     sql: ${TABLE}."NAME" ;;
   }
 
+dimension: Callback_ratio {
+  type: number
+  sql: sum(${callbacks})/sum(${calls}) ;;
+
+}
+
   measure: count {
     type: count
     drill_fields: [name]
