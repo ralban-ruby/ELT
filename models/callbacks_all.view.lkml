@@ -41,7 +41,7 @@ view: callbacks_all {
 
 dimension: Callback_ratio {
   type: number
-  sql: sum(${callbacks})/sum(${calls}) ;;
+  sql: ${TABLE}."CallBackRatio";;
 
 }
 
