@@ -2,7 +2,6 @@ view: callbacks_all {
   sql_table_name: "RS"."CALLBACKS"
     ;;
 
-
   dimension: callbacks {
     type: number
     sql: ${TABLE}."CALLBACKS" ;;
@@ -49,9 +48,14 @@ dimension: roundedratio{
     sql: ${TABLE}."NAME" ;;
   }
 
-
   measure: count {
     type: count
     drill_fields: [name]
   }
+
+measure: Callback_Ratio {
+  type: sum
+  sql: ${TABLE}."ROUNDEDRATIO";;
+  value_format: "0\%"
+}
 }
