@@ -1,5 +1,5 @@
 view: callbacks {
-  sql_table_name: "RS"."callbacks_old"
+  sql_table_name: "RS"."callback_old"
     ;;
 
   dimension: callbackratio {
