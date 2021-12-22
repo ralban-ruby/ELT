@@ -46,7 +46,7 @@ view: callbacks {
 
   dimension: total {
     type: number
-    sql: ${TABLE}."TOTAL" ;;
+    sql: ${TABLE}."calls" ;;
   }
 
   measure: count {
