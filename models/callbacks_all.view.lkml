@@ -18,6 +18,11 @@ view: callbacks_all {
     sql: ${TABLE}."Callbackratio" ;;
   }
 
+dimension: roundedratio{
+  type: number
+  sql: ${TABLE}."RoundedRatio" ;;
+}
+
   dimension_group: date {
     type: time
     timeframes: [
