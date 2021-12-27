@@ -1,6 +1,11 @@
-view: callbacks_all {
+view: callbacks_new {
   sql_table_name: "RS"."CALLBACKS"
     ;;
+
+  dimension: callbackratio {
+    type: number
+    sql: ${TABLE}."CALLBACKRATIO" ;;
+  }
 
   dimension: callbacks {
     type: number
@@ -11,16 +16,6 @@ view: callbacks_all {
     type: number
     sql: ${TABLE}."CALLS" ;;
   }
-
-  dimension: callbackratio {
-    type: number
-    sql: ${TABLE}."Callbackratio" ;;
-  }
-
-dimension: roundedratio{
-  type: number
-  sql: ${TABLE}."RoundedRatio" ;;
-}
 
   dimension_group: date {
     type: time
@@ -37,20 +32,18 @@ dimension: roundedratio{
     sql: ${TABLE}."DATE" ;;
   }
 
-  dimension: Week {
-    type: date
-    sql: DATEADD( day, 7, ${date_week});;
-    datatype: date
-  }
-
   dimension: name {
     type: string
     sql: ${TABLE}."NAME" ;;
+  }
+
+  dimension: roundedratio {
+    type: number
+    sql: ${TABLE}."ROUNDEDRATIO" ;;
   }
 
   measure: count {
     type: count
     drill_fields: [name]
   }
-
 }
