@@ -13,6 +13,7 @@ explore: callbacks_all {}
 explore: jace_data {}
 explore: rs_recap_callback {}
 explore: moonlight_data{}
+explore: callbacks_new {}
 explore: rs_callback_details{hidden: yes}
 
 datagroup: elt_default_datagroup {
