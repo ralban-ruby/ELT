@@ -32,6 +32,11 @@ view: callbacks_new {
     sql: ${TABLE}."DATE" ;;
   }
 
+  dimension: Week {
+    type: date
+    sql: DATEADD( day, 7, ${date_week});;
+    datatype: date
+  }
   dimension: name {
     type: string
     sql: ${TABLE}."NAME" ;;
