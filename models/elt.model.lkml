@@ -11,7 +11,7 @@ explore: close_rate_elt {hidden: yes}
 explore: jace_data {}
 explore: rs_recap_callback {}
 explore: moonlight_data{}
-explore: callbacks_new {}
+explore: callbacks_new{}
 
 datagroup: elt_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
