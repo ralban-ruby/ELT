@@ -38,6 +38,7 @@ view: callbacks_new {
     datatype: date
   }
   dimension: name {
+    label: "RC_Name"
     type: string
     sql: ${TABLE}."NAME" ;;
   }

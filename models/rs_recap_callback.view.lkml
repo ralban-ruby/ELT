@@ -40,7 +40,7 @@ view: rs_recap_callback {
 
   dimension: fc_receptionist {
     type: string
-    label: "Receptionist"
+    label: "Receptionist FC"
     description: "FC_Receptionist"
     sql: ${TABLE}."FC_RECEPTIONIST" ;;
   }
