@@ -49,7 +49,9 @@ view: callbacks_new {
   }
 
   measure: count {
+    label: "count"
     type: count
     drill_fields: [name]
   }
+
 }
