@@ -11,7 +11,14 @@ explore: close_rate_elt {hidden: yes}
 explore: jace_data {}
 explore: rs_recap_callback {}
 explore: moonlight_data{}
-explore: callbacks_new{}
+
+explore: callbacks_new{
+  join: rs_recap_callback {
+    relationship:one_to_one
+    type: left_outer
+    sql_on: ${callbacks_new.name}=${rs_recap_callback.fc_receptionist} ;;
+    }
+}
 
 datagroup: elt_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
