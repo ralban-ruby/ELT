@@ -54,4 +54,21 @@ view: callbacks_new {
     drill_fields: [name]
   }
 
+  measure: Callback_Sum {
+    type: sum
+    sql: ${callbacks} ;;
+  }
+
+  measure: calls_sum {
+    type: sum
+    sql: ${TABLE}."CALLS" ;;
+  }
+
+  measure: CallbackRatio {
+    type: number
+    value_format_name: percent_2
+    ##value_format: "0.#"
+    sql: COALESCE(${Callback_Sum},0)/ NULLIF(${calls_sum},0);;
+  }
+
 }
