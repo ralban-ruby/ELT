@@ -25,4 +25,4 @@ datagroup: elt_default_datagroup {
   max_cache_age: "1 hour"
 }
 
-persist_with: elt_default_datagroup
+persist_for: "0 seconds"
