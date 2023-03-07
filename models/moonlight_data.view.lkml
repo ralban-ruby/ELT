@@ -55,12 +55,30 @@ view: moonlight_data {
       date,
       week,
       month,
+      year,
+      day_of_week,
+      hour,
+      minute,
+      second,
+      week_of_year,
+      day_of_month,
       quarter,
-      year
+      month_name,
     ]
     convert_tz: no
     datatype: date
     sql: ${TABLE}."NOMINALDATE" ;;
+  }
+
+  dimension: day_of_month {
+    type: number
+    value_format: "00"
+    sql: CASE
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 1 AND 7 THEN '01 - 07'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 8 AND 14 THEN '08 - 14'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 15 AND 21 THEN '15 - 21'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 22 AND 31 THEN '22 - 31'
+    END ;;
   }
 
   dimension: talktime_minutes {
