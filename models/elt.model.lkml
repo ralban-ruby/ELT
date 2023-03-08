@@ -11,6 +11,7 @@ explore: close_rate_elt {hidden: yes}
 explore: jace_data {}
 explore: rs_recap_callback {}
 explore: moonlight_data{}
+explore: call_data_by_week{}
 
 explore: callbacks_new{
   join: rs_recap_callback {

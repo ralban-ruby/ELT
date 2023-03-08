@@ -70,14 +70,14 @@ view: moonlight_data {
     sql: ${TABLE}."NOMINALDATE" ;;
   }
 
-  dimension: day_of_month {
-    type: number
-    value_format: "00"
+  dimension: week_num {
+    type: string
     sql: CASE
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 1 AND 7 THEN '01 - 07'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 8 AND 14 THEN '08 - 14'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 15 AND 21 THEN '15 - 21'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 22 AND 31 THEN '22 - 31'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 1 AND 7 THEN 'Week 1'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 8 AND 14 THEN 'Week 2'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 15 AND 21 THEN 'Week 3'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 22 AND 28 THEN 'Week 4'
+      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 29 AND 31 THEN 'Remaining Days'
     END ;;
   }
 
@@ -95,4 +95,5 @@ view: moonlight_data {
     type: count
     drill_fields: []
   }
+
 }
