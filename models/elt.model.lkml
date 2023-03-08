@@ -10,8 +10,16 @@ explore: website_traffic_elt {hidden: yes}
 explore: close_rate_elt {hidden: yes}
 explore: jace_data {}
 explore: rs_recap_callback {}
-explore: moonlight_data{}
 explore: call_data_by_week{}
+explore: dimholiday {}
+
+explore: moonlight_data{
+  join: dimholiday{
+    relationship: many_to_one
+    type: left_outer
+    sql_on: ${moonlight_data.nominaldate_date} =${dimholiday.date_at} ;;
+  }
+}
 
 explore: callbacks_new{
   join: rs_recap_callback {
