@@ -70,16 +70,20 @@ view: moonlight_data {
     sql: ${TABLE}."NOMINALDATE" ;;
   }
 
-  dimension: week_num {
-    type: string
+  dimension: shifted_week {
+    type: date
+    convert_tz: no
     sql: CASE
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 1 AND 7 THEN 'Week 1'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 8 AND 14 THEN 'Week 2'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 15 AND 21 THEN 'Week 3'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 22 AND 28 THEN 'Week 4'
-      WHEN date_part('day', ${TABLE}."NOMINALDATE") BETWEEN 29 AND 31 THEN 'Remaining Days'
-    END ;;
-  }
+            WHEN ${nominaldate_day_of_week} = "Saturday" THEN ${nominaldate_date}
+            WHEN ${nominaldate_day_of_week} = "Sunday"  THEN date_add(days, -1, ${nominaldate_date})
+            WHEN ${nominaldate_day_of_week} = "Monday" THEN date_add(days, -2, ${nominaldate_date})
+            WHEN ${nominaldate_day_of_week} = "Tuesday" THEN date_add(days, -3, ${nominaldate_date})
+            WHEN ${nominaldate_day_of_week} = "Wednesday" THEN date_add(days, -4, ${nominaldate_date})
+            WHEN ${nominaldate_day_of_week} = "Thursday" THEN date_add(days, -5, ${nominaldate_date})
+            WHEN ${nominaldate_day_of_week} = "Friday" THEN date_add(days, -6, ${nominaldate_date})
+          END;;
+          }
+
 
   dimension: talktime_minutes {
     type: number
