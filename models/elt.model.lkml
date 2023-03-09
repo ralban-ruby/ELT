@@ -44,4 +44,4 @@ datagroup: elt_default_datagroup {
 
 persist_for: "0 seconds"
 
-week_start_day: saturday
+week_start_day: monday
